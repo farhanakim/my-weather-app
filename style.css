@@ -1,6 +1,11 @@
 body {
     background: #82B5CB;
     font-family: 'Outfit', sans-serif;
+    border: solid #f3f6f8 15px;
+    border-radius: 30px;
+    margin: 100px 100px;
+    padding: 50px;
+    box-shadow: 14px 14px #1c2120;
 }
 
 .search-button {
