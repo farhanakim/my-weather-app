@@ -32,18 +32,49 @@
         <div class="current-weather">
           <div>
             <h1 class="current-city" id="current-city">Paris</h1>
-            <h2 class="current-temperature">
+            <h2 id="current-date">Sunday, 1 January, 22:00</h2>
+            <h3 class="current-temperature">
               <span class="current-temperature-value">24</span>
               <span class="current-temperature-unit">°C</span>
-            </h2>
-            <span class="current-temperature-icon">☀️</span>
-            <p class="current-details">
-              <span id="current-date"></span>Sunday 01:08, moderate rain <br />
-              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
-            </p>
+            </h3>
+            <div>
+              <ul class="current-details">
+                <li>
+                  <div class="current-details-emoji">☂️</div>
+                  <div class="current-details-values">30%</div>
+                  Precipitation
+                </li>
+                <li>
+                  <div class="current-details-emoji">💧</div>
+                  <div class="current-details-values">20%</div>
+                  Humidity
+                </li>
+                <li>
+                  <div class="current-details-emoji">🍃</div>
+                  <div class="current-details-values">12 km/h</div>
+                  Wind speed
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/farhanakim" target="_blank"
+            >Nur Farhana</a
+          >
+          and is on
+          <a href="https://github.com/farhanakim/my-weather-app" target="_blank"
+            >GitHub</a
+          >
+          and hosted on
+          <a href="https://curious-medovik-42a402.netlify.app/" target="_blank"
+            >Netlify</a
+          >
+        </p>
+      </footer>
     </div>
     <script src="script.js"></script>
   </body>
