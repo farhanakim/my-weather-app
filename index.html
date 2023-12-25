@@ -32,32 +32,34 @@
       </header>
       <main>
         <div class="current-weather">
-          <div>
-            <h1 class="current-city" id="current-city">Paris</h1>
-            <h2 id="current-date">Sunday, 1 January, 22:00</h2>
-            <h3 class="current-temperature">
-              <span class="current-temperature-value">24</span>
-              <span class="current-temperature-unit">°C</span>
-            </h3>
-            <div>
+          <div class="city-time-detail">
+            <div class="city-time">
+              <h1 class="current-city" id="current-city">Paris</h1>
+              <h2 id="current-date">Sunday, 1 January, 22:00</h2>
+            </div>
+            <div class="details-list">
               <ul class="current-details">
                 <li>
-                  <div class="current-details-emoji">☂️</div>
-                  <div class="current-details-values">30%</div>
-                  Precipitation
+                  <span class="current-details-emoji">🏞️</span>
+                  <span id="current-humidity">Moderate rain</span>
                 </li>
                 <li>
-                  <div class="current-details-emoji">💧</div>
-                  <div class="current-details-values">20%</div>
-                  Humidity
+                  <span class="current-details-emoji">💧Humidity:</span>
+                  <span id="current-humidity">20%</span>
                 </li>
                 <li>
-                  <div class="current-details-emoji">🍃</div>
-                  <div class="current-details-values">12 km/h</div>
-                  Wind speed
+                  <span class="current-details-emoji">🍃Wind speed:</span>
+                  <span id="current-wind-speed">12 km/h</span>
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="current-temperature">
+            <h3>
+              <span id="current-temperature-value">24</span>
+              <span class="current-temperature-unit">°C</span>
+              <span id="weather-icon">☀️</span>
+            </h3>
           </div>
         </div>
       </main>

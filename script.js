@@ -1,4 +1,4 @@
-/* To show city and API integration*/
+/*City and API integration*/
 function showCity(event) {
     event.preventDefault(); //This line prevents the default behavior of the form submission, which would normally be to reload the page. It allows the JavaScript code to handle the submission without a page refresh.
     let searchCity = document.querySelector("#search-input");
@@ -13,7 +13,7 @@ function showCity(event) {
 }
 
 function displayWeather(response) {
-    let temperatureElement = document.querySelector(".current-temperature-value")
+    let temperatureElement = document.querySelector("#current-temperature-value")
     let temperature = Math.round(response.data.temperature.current);
     temperatureElement.innerHTML = temperature;
 }
@@ -21,7 +21,7 @@ function displayWeather(response) {
 let searchForm = document.querySelector("#search-form"); 
 searchForm.addEventListener("submit", showCity); //This line attaches an event listener to the searchForm. It listens for the "submit" event (when the form is submitted) and calls the showCity function when that event occurs.
 
-/* To show date */
+/*Date */
 let now = new Date();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 let currentDay = days[now.getDay()];
@@ -32,3 +32,11 @@ let currentHour = now.getHours();
 let currentMinute = now.getMinutes();
 let currentTime = document.querySelector("#current-date");
 currentTime.innerHTML = (`${currentDay}, ${currentDate} ${currentMonth}, ${currentHour}:${currentMinute}`);
+
+/* Weather details */
+let currentPrecipitation = document.querySelector("#current-precipitation");
+let currentHumidity = document.querySelector("#current-humidity");
+let currentWindSpeed = document.querySelector("#current-wind-speed");
+currentPrecipitation.innerHTML = `100%`;
+currentHumidity.innerHTML = `100%`;
+currentWindSpeed.innerHTML = `100km/h`;
