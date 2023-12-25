@@ -106,3 +106,7 @@ a {
     color: #9f4755;
     text-decoration: none;
 }
+
+@media screen and max-width(1048px) {
+    .weather-app 
+}
