@@ -12,16 +12,33 @@ function showCity(event) {
     axios.get(apiUrl).then(displayWeather);
 }
 
+/* Weather details */
 function displayWeather(response) {
     let temperatureElement = document.querySelector("#current-temperature-value")
     let temperature = Math.round(response.data.temperature.current);
     temperatureElement.innerHTML = temperature;
+
+    // let weatherIconElement = document.querySelector("#weather-icon");
+    // let weatherIcon = (response.data.condition.icon);
+    // weatherIconElement.innerHTML = weatherIcon;
+
+    let humidityElement = document.querySelector("#current-humidity");
+    let currentHumidity = Math.round(response.data.temperature.current);
+    humidityElement.innerHTML = `${currentHumidity}%`;
+
+    let windSpeedElement = document.querySelector("#current-wind-speed");
+    let currentWindSpeed = (response.data.wind.speed);
+    windSpeedElement.innerHTML = `${currentWindSpeed} km/h`;
+
+    let weatherDescriptionElement = document.querySelector("#current-weather-description");
+    let weatherDescription = (response.data.condition.description);
+    weatherDescriptionElement.innerHTML = weatherDescription.charAt(0).toUpperCase() + weatherDescription.slice(1);
 }
 
 let searchForm = document.querySelector("#search-form"); 
 searchForm.addEventListener("submit", showCity); //This line attaches an event listener to the searchForm. It listens for the "submit" event (when the form is submitted) and calls the showCity function when that event occurs.
 
-/*Date */
+/* Date */
 let now = new Date();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 let currentDay = days[now.getDay()];
@@ -30,13 +47,15 @@ let month = ["January", "February", "March", "April", "May", "June", "July", "Au
 let currentMonth = month[now.getMonth()];
 let currentHour = now.getHours();
 let currentMinute = now.getMinutes();
-let currentTime = document.querySelector("#current-date");
-currentTime.innerHTML = (`${currentDay}, ${currentDate} ${currentMonth}, ${currentHour}:${currentMinute}`);
 
-/* Weather details */
-let currentPrecipitation = document.querySelector("#current-precipitation");
-let currentHumidity = document.querySelector("#current-humidity");
-let currentWindSpeed = document.querySelector("#current-wind-speed");
-currentPrecipitation.innerHTML = `100%`;
-currentHumidity.innerHTML = `100%`;
-currentWindSpeed.innerHTML = `100km/h`;
+if (currentMinute < 10) {
+    currentMinute = `0${currentMinute}`;
+}
+
+if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
+}
+
+let currentTimeElement = document.querySelector("#current-date");
+let currentTime = (`${currentDay}, ${currentDate} ${currentMonth}, ${currentHour}:${currentMinute}`);
+currentTimeElement.innerHTML = currentTime;
