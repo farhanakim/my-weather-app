@@ -1,15 +1,15 @@
 body {
     background: #82B5CB;
     display: grid;
+    font-family: 'Outfit', sans-serif;
 }
 
 .weather-app {
     background: #82B5CB;
-    font-family: 'Outfit', sans-serif;
     border: solid #f3f6f8 15px;
     border-radius: 30px;
     padding: 25px;
-    margin: 3rem 1.5rem ;
+    margin: 30px auto ;
     box-shadow: 14px 14px #1c2120;
     display: grid;
 }
@@ -76,10 +76,17 @@ h2 {
     font-weight: 500;
 }
 
-h3 {
+.current-temperature {
     color: white;
     font-size: 4rem;
-    margin: 5rem 0.5rem;
+    margin: 6rem 0 5rem 5rem;
+    display: flex;
+    font-weight: 700; 
+}
+
+.current-temperature-unit {
+    font-size: 30px;
+    padding: 10px 0 0 0;
 }
 
 h4 {
